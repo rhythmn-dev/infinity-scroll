@@ -2,8 +2,13 @@
   <div>
     <div class="main_menu">
       <swiper :options="swiperOption" class="main-swiper">
-        <swiper-slide v-for="(menu, index) in mainMenuList" :key="index">
-          <a href="/" v-bind:class="{'workM':true, 'active':($route.path == '/' + menu)}">{{menu}}<span></span></a>
+        <!--<swiper-slide v-for="(menu, index) in mainMenuList" :key="index">-->
+        <swiper-slide>
+          <!--<a v-if="menu === 'Scroll'" href="/scroll" v-bind:class="{'workM':true, 'active':($route.path == '/' + menu)}"></a>-->
+          <a href="/" v-bind:class="{'workM':true, 'active':($route.path == '/')}">Home<span></span></a>
+        </swiper-slide>
+        <swiper-slide>
+          <a href="/scroll" v-bind:class="{'workM':true, 'active':($route.path == '/scroll')}">Resize<span></span></a>
         </swiper-slide>
       </swiper>
     </div>
@@ -51,7 +56,7 @@ export default {
         {id: 2, url: require('../assets/img/12.png')},
         {id: 3, url: require('../assets/img/12.png')}
       ],
-      mainMenuList: ['Home', 'New', 'Brand', 'Sales'],
+      mainMenuList: ['Home', 'Scroll', 'Brand', 'Sales'],
       searchList: ['fjlsdjf', 'fdjflsdjfds', 'hohofdsf'],
       searchKeyword: ''
     }

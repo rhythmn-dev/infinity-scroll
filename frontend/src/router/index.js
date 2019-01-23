@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/header-nav'
 import HomePage from '@/components/HomePage'
 import MainPage from '@/components/MainPage'
+import ImageResize from '@/components/ImageResize'
 // import Test from '@/components/Test'
 
 Vue.use(Router)
@@ -22,9 +23,14 @@ export default new Router({
       component: HomePage,
       children: [
         {
-          path: '',
+          path: '/',
           name: 'main',
           component: MainPage // 메인 페이지
+        },
+        {
+          path: '/scroll',
+          name: 'resize',
+          component: ImageResize // resize 페이지
         }
       ]
     }

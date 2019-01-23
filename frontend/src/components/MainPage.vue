@@ -13,19 +13,20 @@
                   <b class="workS">{{index | priceFormat}}원</b>
                 <!--</router-link>-->
               </div>
-              <div>
-                <vue-avatar
-                  :width = "375"
-                  :height = "610"
-                  :rotation = "rotation"
-                  :borderRadius = "borderRadius"
-                  :scale = "scale"
-                  :border = "border"
-                  ref = "vueavatar"
-                  @vue-avatar-editor:image-ready = "onImageReady"
-                  >
-                </vue-avatar>
-              </div>
+              <!--<div>-->
+                <!--<vue-avatar-->
+                  <!--:width = "375"-->
+                  <!--:height = "610"-->
+                  <!--:rotation = "rotation"-->
+                  <!--:borderRadius = "borderRadius"-->
+                  <!--:scale = "scale"-->
+                  <!--:border = "border"-->
+                  <!--:color = "color"-->
+                  <!--ref = "vueavatar"-->
+                  <!--@vue-avatar-editor:image-ready = "onImageReady"-->
+                  <!--&gt;-->
+                <!--</vue-avatar>-->
+              <!--</div>-->
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination swiper-pagination-progress" slot="pagination">
@@ -82,10 +83,11 @@ export default {
       offset: 0,
       limit: 10,
       data: [],
-      borderRadius: 50,
+      borderRadius: 5,
       rotation: 0,
       scale: 1,
-      border: 1
+      border: 1,
+      color: [0, 0, 72]
     }
   },
   methods: {
