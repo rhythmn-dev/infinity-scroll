@@ -13,6 +13,19 @@
                   <b class="workS">{{index | priceFormat}}원</b>
                 <!--</router-link>-->
               </div>
+              <div>
+                <vue-avatar
+                  :width = "375"
+                  :height = "610"
+                  :rotation = "rotation"
+                  :borderRadius = "borderRadius"
+                  :scale = "scale"
+                  :border = "border"
+                  ref = "vueavatar"
+                  @vue-avatar-editor:image-ready = "onImageReady"
+                  >
+                </vue-avatar>
+              </div>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination swiper-pagination-progress" slot="pagination">
@@ -26,8 +39,13 @@
 
 <script>
 import axios from 'axios'
+import {VueAvatar} from 'vue-avatar-editor-improved'
 
 export default {
+  components: {
+      VueAvatar
+      // VueAvatarScale
+  },
   name: 'MainPage',
   filters: {
     priceFormat: function (value) {
@@ -63,7 +81,11 @@ export default {
     return {
       offset: 0,
       limit: 10,
-      data: []
+      data: [],
+      borderRadius: 50,
+      rotation: 0,
+      scale: 1,
+      border: 1
     }
   },
   methods: {
